@@ -3,6 +3,8 @@ import 'package:flutter_islands/src/controllers/control.dart';
 
 /// The Layout Controller, this contoller can be passed to a [LayoutWidget] to control the ui of that widget.
 abstract class LayoutControl extends Control {
+  LayoutControl({super.startsBusy});
+
   final Set<Control> _registeredControllers = {};
 
   List<Control> get _busyControllers => [

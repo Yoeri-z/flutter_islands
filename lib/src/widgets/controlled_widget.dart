@@ -30,6 +30,7 @@ abstract class ControlledWidget<T extends Control> extends Widget {
 class ControlElement<T extends IslandControl> extends ComponentElement {
   ControlElement(super.widget) {
     control = typedWidget.createControl(this);
+    control.element = this;
   }
 
   /// The control stored in this element.
@@ -41,7 +42,7 @@ class ControlElement<T extends IslandControl> extends ComponentElement {
   @override
   Widget build() {
     //TODO: Remove dependance on provider
-    return Provider.value(
+    return ChangeNotifierProvider.value(
       value: control,
       builder: (context, _) {
         if (control.hasError) return typedWidget.errorBuilder(this, control);

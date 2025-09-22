@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_islands/flutter_islands.dart';
 
-mixin DefaultBuildersMixin on ControlledWidget {
+mixin DefaultBuildersMixin<T extends Control> on ControlledWidget<T> {
   @override
   Widget errorBuilder(BuildContext context, Control control) {
     return Center(child: Text('A problem occured.'));

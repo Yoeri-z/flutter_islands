@@ -33,7 +33,7 @@ abstract class Control extends ChangeNotifier {
   ///
   ///If element is null, this either means that runContext was called in the constructor or that we are unit testing the control.
   @internal
-  late ControlElement? element;
+  ControlElement? element;
 
   static bool _testing = false;
 
